@@ -1,4 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 # to change language of repo from Javascript to Python
-    *.js linguist-language=ASP.NET
+    *.js linguist-language=CSharp
+    *.asp.net linguist-language=true
