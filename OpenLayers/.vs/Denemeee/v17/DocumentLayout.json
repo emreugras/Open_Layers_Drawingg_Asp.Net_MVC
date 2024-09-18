@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFACF3-6489-42FF-AAB7-1180C9C82337}|Denemeee\\Denemeee.csproj|c:\\users\\emre\\desktop\\2024projeler\\denemeee\\denemeee\\scripts\\page\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{44EFACF3-6489-42FF-AAB7-1180C9C82337}|Denemeee\\Denemeee.csproj|solutionrelative:denemeee\\scripts\\page\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFACF3-6489-42FF-AAB7-1180C9C82337}|Denemeee\\Denemeee.csproj|C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\denemeee\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{44EFACF3-6489-42FF-AAB7-1180C9C82337}|Denemeee\\Denemeee.csproj|solutionrelative:denemeee\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{01321f1c-6c9e-3b5b-9c0f-66d2a373c254}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.js",
+              "DocumentMoniker": "C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\Denemeee\\Scripts\\Page\\Main.js",
+              "RelativeDocumentMoniker": "Denemeee\\Scripts\\Page\\Main.js",
+              "ToolTip": "C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\Denemeee\\Scripts\\Page\\Main.js",
+              "RelativeToolTip": "Denemeee\\Scripts\\Page\\Main.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4BAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-08T08:25:08.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\Denemeee\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Denemeee\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\Emre\\Desktop\\2024Projeler\\Denemeee\\Denemeee\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Denemeee\\Views\\Home\\About.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAMwAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-08-08T08:25:09.485Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark">
+        <div class="container" style="color:white;font-size:25px">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                @if (Session["u_name"] != null)
+                {
+                    <ul class="navbar-nav flex-grow-1">
+                        <li style="color:white;font-size:25px;left:1px">@Session["u_name"].ToString() </li>
+                        @*<li>@Html.ActionLink("Logs Table", "Cont", "Home", new { area = "" }, new { @class = "customContact" })</li>*@
+                        <li>@Html.ActionLink("Logout", "LogOut", "User", new { area = " " }, new { @class = "customLogout" })</li>
+
+                    </ul>
+
+
+                }
+                else
+                {
+
+
+                }
+            </div>
+            @*<div class="customBut">
+        <form id="options-form" automplete="off">
+
+            <div class="form-group">
+
+
+                <select class="form-control mr-2 mb-2 mt-2" id="type">
+                    <option value="Point">Point</option>
+                    <option value="LineString">LineString</option>
+                    <option value="Polygon">Polygon</option>
+                    <option value="Circle">Circle</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+        </form>
+        </div>*@
+
+        </div>
+        @*<div class="container"  style="color:white;font-size:25px">
+            <ul class="nav navbar-nav navbar-left-align">
+                <li>@Html.ActionLink("Logout", "LogOut", "User", new { area = " " }, new { @class = "customLogout" })</li>
+            </ul>
+        </div>*@
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <style type="text/css">
+        .customLogout {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+            position: fixed;
+            top: 5px;
+            right: 30px
+        }
+        
+       
+    </style>
+
+</body>
+</html>

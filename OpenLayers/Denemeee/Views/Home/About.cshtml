@@ -1,0 +1,217 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/Page/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/ol.js"></script>
+
+    <link rel="stylesheet" href="~/Scripts/ol.css" />
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v5.3.0/build/ol.js"></script>
+
+    <style type="text/css">
+        .customBut {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+            position: fixed;
+            top: 1.5px;
+            left: 200px
+        }
+        .customContact {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+            position: fixed;
+            top: 5px;
+            right: 200px
+        }
+         td, th {
+            border: 2px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map" class="map"></div>
+
+
+
+    <div class="modal fade" id="staticBack" data-bs-backdrop="true" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Kayıt Yapma</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    <form id="kayıtForm">
+                        <div>
+                            <input type="text" id="names" placeholder="İsim Girin" />
+                            <p>
+                        </div>
+                        <div>
+                            <input type="text" id="surnames" placeholder="Soyisim Giriniz" />
+                            <p>
+                        </div>
+                        <div>
+                            <input type="text" id="comments" placeholder="Notunuzu Girin" />
+                            <p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btnClose" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" id="exportBtn">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="infProps" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                </div>
+                <div class="modal-body">
+
+                    <div>
+
+                        Seçtiğiniz Parselin Bilgileri Asaşıdadır
+                        <p>
+                    </div>
+                    <div>
+                        İsim: <label type="text" id="namers" />
+                    </div>
+                    <div>
+                        Soyisim:  <label type="text" id="surnamers" />
+                    </div>
+                    <div>
+                        Açıklama:  <label type="text" id="commenters" />
+                    </div>
+                    <div>
+                        Kayıt Tarihi:  <label type="text" id="daters" />
+                    </div>
+
+
+
+
+
+                    <p>
+                    <p> Güncelleme Yapmak İçin Lütfen Güncellenecek Bilgileri Girip Değiştir Butonuna Basınız...</p>
+                    <form id="gnclForm">
+                        <label for="fname">İsim Giriniz:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="fsurname">Soyisim Giriniz:</label><br>
+                        <input type="text" id="fsurname" name="fsurname"><br>
+                        <label for="fcomnt">Açıklama Giriniz:</label><br>
+                        <input type="text" id="fcomnt" name="fcomnt"><br>
+                    </form>
+
+
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="sil">Bilgileri Sil</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCloser">Kapat</button>
+                    <button type="button" class="btn btn-primary" id="degistir">Değiştir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="customBut">
+        <form id="options-form" automplete="off">
+
+
+
+
+            <select class="form-control mr-2 mb-2 mt-2" id="type">
+                <option value="None">Parsel Seçimi</option>
+                <option value="Point">Point</option>
+                <option value="Polygon">Polygon</option>
+
+
+            </select>
+        </form>
+
+
+        <div>
+
+
+        </div>
+
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Log Kayıtları</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container">
+                        <table style="width:100%" id="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Kayıt Numarası</th>
+                                    <th scope="col">Kullanıcı</th>
+                                    <th scope="col">Giriş Tarihi</th>
+                                    <th scope="col">Çıkış Tarihi</th>
+                                    <th scope="col">Yeni Kayıt Bilgisi</th>
+                                    <th scope="col">Güncellenen Kayıt Bilgisi</th>
+                                    <th scope="col">Silinen Kayıt Bilgisi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="task-row">
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="customContact">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal" id="asas">
+            Logs Table
+        </button>
+    </div>
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <script src="https://cdn.jsdelivr.net/npm/elm-pep@1.0.6/dist/elm-pep.js"></script>
+    @*<script type="text/javascript">
+            const btn = document.getElementById("yeniKayit");
+            const box = document.getElementById("notMessage");
+
+            btn.addEventListener("click", function () {
+                box.style.opacity = 2;
+                setTimeout(function () { box.style.opacity = 0 }, 150000);
+            });
+        </script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="~/Scripts/Page/Main.js"></script>
+</body>
+
+</html>
